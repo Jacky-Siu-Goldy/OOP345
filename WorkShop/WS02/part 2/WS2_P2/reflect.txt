@@ -1,0 +1,20 @@
+// Name: Jacky Chun Kit Siu
+// Email: jsiu5@myseneca.ca
+// ID: 134663186
+// Date: 2021/09/24
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
+In this workshop we wrote a program to test the speed of the constructor, one argument constructor,
+copy constructor, copy assignment operator, move constructor, move assignment operator. of all of them
+the move assignment operator took the least time. I learned this is because the move assignment operator
+takes the current object pointer and set it equal to the address the other object's pointer is pointing to. So
+they end up sharing the resources. And since they are sharing the same address and the other object is soon to 
+go out of scope, you need to set the other object pointer to nullptr. There by the current object would survive
+the ordeal. Simply stealing the resource is different from allocating new resource to the current object in a copy
+assignment operation, because the act of copying elements one at a time takes time. 
+The copy assignment operator take significantly when copying a large number of data. 
+m_String_Array = new std::string[m_Max_Index];
+for (auto index = 0u; index < m_Max_Index; ++index)
+{
+	m_String_Array[index] = src.m_String_Array[index];// deep copying one at a time takes time
+}

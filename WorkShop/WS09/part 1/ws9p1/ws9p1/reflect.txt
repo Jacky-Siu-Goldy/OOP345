@@ -1,0 +1,31 @@
+It is necessary to use binary files in this workshop, because binary file can be used to 
+store any data. and for encode or decoded code it is the perfect method because whether 
+it is encoded or decoded code the read function is able to read it. There is no need the 
+/*
+date: 2021-11-24
+Name: Chun Kit Jacky Siu
+ID: 134663186
+email: jsiu5@myseneca.ca
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*/
+account for the difference, because the read function is written the same way in either 
+way. And if the program encounter an error, it can catch it without crashing. The code 
+for this program is very weird. if the backup function receives a not encode text, it 
+throws an error. the text is encoded before it is passed to the backup function. This 
+ensure whatever the backup function receive is already encoded, and assume that the 
+restore function only receive encoded data from the binary file. the restore function 
+isn't made into an overloaded constructor. So Step by Step the backup function and 
+restore function can be used only one time.
+
+binding a function to its argument reduce repeated code, because you can use placeholders 
+in it parameter, and use 
+auto f1 = std::bind(converter, std::placeholders::_1 , key, std::placeholders::_2, Cryptor());. 
+And call f1(fill in the placeholders) 
+thread t1 = thread([&]() {f1(temp1, (nbytes / 2)); });
+thread t2 = thread([&]() {f1(temp2, (nbytes - (nbytes / 2))); });
+whenever you need. that way you don't have to write the function you wanted to bind repeatedly. 
+it bind is not used writing multiple threat this can be tedious.
+
+The advantage of multiple thread is that you can run multiple parallel processes, and joined 
+them in the end shortening the processing time, because you are not processing one process 
+after the other linearly.

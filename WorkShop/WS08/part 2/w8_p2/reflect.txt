@@ -1,0 +1,18 @@
+/*
+date: 2021-11-14
+Name: Chun Kit Jacky Siu
+ID: 134663186
+email: jsiu5@myseneca.ca
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+*/
+Some of the advantage of smart pointer is that you don't have to worry about where part of the code throw exception 
+and having the delete expression written after it, if its just a raw pointer it will cause memory leak. Writing 
+unique_ptr<Product> with a & and using the std::move(*smart_pointer), allow the smart pointer to pass ownership of 
+the object or resource on entering a function and on returning from a function and collects object or resources 
+inside a container. A smart pointer also call its own destructor when itself is about to be destroyed.
+
+A major difference between a raw pointer and a smart pointer in my code is that you have to put in a try catch block 
+for temp->validate() in the mergeRaw(...) function  and delete temp in the catch block should an exception occur. 
+And you have to figure out the logic for Product::trace, what it performs in the function. to get the program to 
+output correctly should a throws occur. In merge smart you don't have to worry about memory leak and deleting temp 
+because the smart pointer does it for you. So there is no hiccup sort of speak when you code.

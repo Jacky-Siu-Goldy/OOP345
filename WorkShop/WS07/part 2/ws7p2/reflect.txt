@@ -1,0 +1,30 @@
+
+Date: 2021-11-13
+Name: Chun Kit Jacky Siu
+id: 134663186
+email: jsiu5@myseneca.ca
+I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
+
+The STL library functions used in this workshop are sort(...), transform(...), find_if(...), count_if(...), copy_if(...),
+for_each(...) and any_of(...). The sort algorithm was chosen because we want to rearrange the m_SongCollection array into 
+an array sorted in ascending alphabetical order for the title or album attribute and sorted in ascending order for length 
+depending on the parameter of the sort function and no other algorithm performs this functionality. I chose transform for 
+the clean album function , because It can iterate from beginning to the end and change according to the condition if song.m_album 
+is equal to "none" then change it to "", return song and put the result back into the original array. Could have use for_each(...) 
+to do it but transform allows more options for you to decide what to do with the result. I used find_if(...) for the inCollection 
+function, because it lets you find the matching element and return the matching element as a result. if the result doesn't equal 
+to the end of the array then we have find the artist in the collection. Although I could have used any_of(...) which works better 
+because it returns a bool, but I need to use any_of(...) somewhere else in the program because it is easier. In getSongsForArtist 
+function I used count_if(...) and copy_if(...); count_if because It counts exactly the number of songs that belongs to the artist 
+in the collection. That number can be used to set the size of the std::list<song>(number) that way the list is the exactly size 
+needed for copy_if(...) to copy its result to. For the display function I used for_each to calculate the total_length of the album 
+and any_of(...) to check if the min or seconds are just 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9. If either of them are then add a 0 in front 
+of it. 
+
+The advantage of using algorithm over implementing loops yourself is the lack of complexity for doing a very complicated job, such 
+as sort or transform. Without algorithm you will have to write a whole slew of code just to do the same thing.
+
+To prevent the client to specify an invalid string, allowing any error to be detected by the compiler, I would put an else statement 
+that throws a const char* error if the criteria for the parameter is not met, such as "Error: Invalid parameter!". And then I would 
+put a try and catch block when ever the sort function is used, to let the users know an error occurred.

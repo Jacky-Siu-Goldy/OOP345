@@ -1,0 +1,17 @@
+
+// Chun Kit Jacky Siu - 2021/10/01
+// email: jsiu5@myseneca.ca
+// ID:134663186
+//I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+The reason for specializing the operator+=() member function is because we want template<> PairSummable<std::string, std::string>
+to perform a different operation than what the template template<typename V, typename K> PairSummable<V, K> would do which is 
+adding the value up of the elements that have the same key, the former do a different thing which is concatenate the string values 
+of the elements that have the same key. We don't need the specialize the initial value for 
+template<typename V, typename K> PairSummable<V,K> because it is of the the type V which is part of the template. 
+And the initial type is specified at compile time so the the compiler know what type initial need to initialize 
+and instantiate to. 
+
+The reason for defining the class variable outside the class definition is because a static variable declared in a class behaves 
+kind of like a global variable and need to be define out side  of the class in the header. If it is define inside of the class 
+in the header then at compile time then it would be defined multiple times, if the header is included in multiple cpp files
+that would violate the one definition rule and cause an error.

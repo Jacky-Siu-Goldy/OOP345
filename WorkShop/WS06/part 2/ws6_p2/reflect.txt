@@ -1,0 +1,28 @@
+// Chun Kit Jacky Siu - 2021/10/29
+// email: jsiu5@myseneca.ca
+// ID:134663186
+//I have done all the coding by myself
+//and only copied the code that my professor provided to complete my workshops and assignments.
+
+As the question stated vector uses dynamically allocated memory. Just like a dynamically allocated 
+array Vector uses memory arranged contiguously in the heap, that means when you are done with the 
+memory at the end of the program you have deallocate it with a destructor  otherwise you get memory leaks.
+
+A different solution to for the function load data to detect if something goes wrong such as getting 
+invalid data, I think is to use the string gotten from getline on line 27 of Utilites.cpp and process it. 
+After line 27 use int old_position = input.tellg() to remember the original position after tag was gotten. 
+Use if statements  and strl.find(',') to see if all the delimiters are there and where they are expect to be. 
+To determine if each delimiter are there you use find and see if you hit it before string::npos. You do that 
+one at a time. if they are not found you can throw an exception type const char* with a a statement. and 
+after you have gotten each token you process it by trimming  it using the trim function. For the first tag 
+you don't have to change anything as the code will throw a std::string type(tag) if it is something not 
+expected. For the others If after processing you detect an empty string, or have trouble converting a string 
+to a double for top_speed or something not expected, you can throw an exception, type string again stating 
+what the error was right in the createInstance function. only After you have checked that everything is correct,
+do you use input.seekg(old_position, std::ios::beg); and instantiate return new Car(input) or return new Racecar(input) 
+depending on the tag.
+
+In this workshop we have to use std::list<sdds::Vehicle*> and std::vector<sdds::Vehicle*> to store a collection 
+of vehicles as pointers, but we couldn't use std::list<sdds::Vehicle> and std::vector<sdds::Vehicle> instead, because 
+dynamically allocated array starts with a pointer to the first element of the array. it is not a static array, so you 
+can't just use sdds::Vehicle. 

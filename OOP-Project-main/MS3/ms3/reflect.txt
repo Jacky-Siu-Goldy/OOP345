@@ -1,0 +1,22 @@
+// Name: Jacky Chun Kit Siu
+// Seneca Student ID: 134663186
+// Seneca email: jsiu5@myseneca.ca
+// Date of completion: 2021-11-30
+//
+// I confirm that I am the only author of this file
+//   and the content was created entirely by me.
+
+There are some feature of ms3 that is extremely confusing and I felt were unnecessary done to  complicate
+things such as the instance variable m_cntCustomerOrder in the LineManager Module. The module never explain
+where that total number of CustomerOrder objects going to come from. It took me days to realize that you get it 
+by doing this:
+for (auto it = pending.begin(); it != pending.end(); ++it) {
+	m_cntCustomerOrder += it->getm_cntItem();
+}
+and getm_cntItem() is a function that i have to create on my own to return m_cntItem.
+
+The function attemptToMoveOrder() is another confusing one. It returns a bool but for what is not explain.
+I finish MS3 without any thing requiring attemptToMoveOrder() to return a bool. The only thing that I 
+think return a bool for that function is good for is debugging or that it is to stop m_order from poping when
+m_order is empty(). Those are the two things that I find causing undue stress to me, because it was not explained
+why they are necessary, how it is done.

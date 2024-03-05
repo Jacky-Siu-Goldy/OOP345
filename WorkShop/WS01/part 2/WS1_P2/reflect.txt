@@ -1,0 +1,22 @@
+// Name: Jacky Chun Kit Siu
+// Email: jsiu5@myseneca.ca
+// ID: 134663186
+// Date: 2021/09/15
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
+The difference between internal linkage and external linkage, is that a variable 
+that is declare and defined to have an internal linkage is only visible to the 
+linker within the translation unit it is present at, while an object or function 
+that has an external linkage is visible to the linker when processing other 
+translational unit.
+When a variable is declare as static inside a function, memory is allocated for it for the
+lifetime of the program. The memory is allocated once and it survive the end of the 
+scope of the function so the value of the variable in the previous call get 
+carried through to the next call. This is useful in application where previous state of the function
+needs to be stored.
+In the Event class display function, I used the static keyword to create an internal linkage for
+a variable name counter. The counter is set to increment by 1 every time the display function is called.
+Static variable in class is shared by objects. Since it is shared there cannot be multiple copies of the same
+static variable. This is the reason why static class variable cannot be initialized in a constructor.
+The changes that I made in upgrading my Event class included add an Event class copy constructor
+and copy assignment operator. Also change class member description to a dynamically allocated char variable

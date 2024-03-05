@@ -1,0 +1,35 @@
+// Chun Kit Jacky Siu 2021/10/07
+// email: jsiu5@myseneca.ca
+// ID:134663186
+// I have done all the coding by myself and only copied the code that my professor provided to complete my workshops and assignments.
+
+A Composition is a class that contain within it an instance of another class and it is responsible for the creation 
+and destruction of that instance. The life of that sub-object or instance whether it is copied, assigned or move 
+copied or move assigned is completely managed by the owner class. When the owner is gone so is the instance of that 
+object.
+
+Aggregation is the partial ownership of an instance of an sub-object by the owner class. The sub-object is created 
+outside of the owner class.it is then passed to the owner class. The owner class is not responsible for the destruction 
+of the sub-object. When the owner is gone. The sub-object lives on. 
+
+In a composition relationship the copied constructor and copied assign is responsible for allocating new resource the 
+sub-object being copied to. The move copied and the move assigned is responsible for shifting resource away from the 
+dying sub-object to the sub-object. And the life of the dying subject ends soon after the move is completed.
+In an aggregation relationship the copied constructor and copied assign, moved copied and moved assigned works similarly 
+to their composition counter part. The difference is they have no affect on the life of sub-object created outside of and 
+partially owned by the parent class.
+
+In this workshop, both the ConfirmationSender class and the Restaurant class have a aggregation relationship with the 
+const sdds::Reservation** ppReservations object. They receive pointers to the Reservation class Array:
+const Reservation* reservation or reference to reservation object: const Reservation& res, the
+Array's element to copy from. They have no affect on the life of the Array of the Reservation class.
+
+The m_reservation an array of the class Reservation object created and destroyed in the class Restaurant is an example 
+of composition.
+
+The std::cout and std::move() are examples of association relationship between main, standard and the module utility in 
+the workshop.
+
+The most trouble I had with this workshop was figuring out pointer to Arrays. So **something is the Array itself which is 
+the first element the pointer is pointed to. *something is the address of the pointer to the Array. *something[i] is the 
+element of the array. something[i] is the address of the pointer pointed to that individual element.
